@@ -84,3 +84,8 @@ function onlyOne(checkbox) {
     if (item !== checkbox) item.checked = false
   })
 }
+
+function Disable() {
+  document.getElementById("submit").disabled = true
+}
+
