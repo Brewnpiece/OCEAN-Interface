@@ -1,3 +1,6 @@
+//GOD HAVE MERCY
+
+//INCREMENT BUTTON
 let incrementButton = document.getElementsByClassName('inc');
 var decrementButton = document.getElementsByClassName('dec');
 //console.log(incrementButton);
@@ -40,17 +43,18 @@ for (var i = 0; i < decrementButton.length; i++) {
   })
 }
 
+//SUBMIT FUNCTION
 function myFunction() {
   // Get all input elements with the class 'counter-display'
-  const inputs = document.querySelectorAll('.counter-display');
+  const inputs = document.querySelectorAll('input');
   const scouterName = document.getElementById('scouter-name').value;
   const robotSide = document.querySelector('#robot-side').value;
   const comments = document.getElementById('comments').value;
   const teamNumber = document.getElementById('team-number').value;
   const checkbox = document.getElementById('leave');
   const parked = document.getElementById('parked');
-  const stage = document.getElementById('stage');
-  const none = document.getElementById('none');
+  const stage = document.getElementById('shallow');
+  const none = document.getElementById('deep');
   const matchNumber = document.getElementById('match-number').value;
   let output = 'The values are: ';
   output += `${scouterName}~${matchNumber}~${robotSide}~${teamNumber}~${checkbox.checked}~${parked.checked}~${stage.checked}~${none.checked}~`;
@@ -62,10 +66,12 @@ function myFunction() {
 
   // Display the output in a paragraph element (you'll need to add this to your HTML)
   document.getElementById('output').innerHTML = output;
+  console.log(output)
 }
 
-var slide = 0;
 
+//PAGE SWIPER
+var slide = 0;
 function swipePage(increment) {
   if (i > 0) {
     slides = document.getElementById("pages").children
@@ -78,9 +84,47 @@ function swipePage(increment) {
   }
 }
 
+
+//CHECKBOXES
 function onlyOne(checkbox) {
   var checkboxes = document.getElementsByName(checkbox.name)
   checkboxes.forEach((item) => {
     if (item !== checkbox) item.checked = false
   })
 }
+
+//LX ADDER
+document.querySelectorAll('.update').forEach(button => {
+  button.addEventListener('click', function(event) {
+    // Get the button that was clicked
+    let buttonClicked = event.target;
+    // Get the group ID from the button
+    let groupId = buttonClicked.dataset.group;
+    // Find the input with matching ID
+    let input = document.getElementById(groupId);
+    // Append the button's title to the input value with a slash
+    if (input.value) {
+      input.value += ` / ${buttonClicked.title}`;
+    } else {
+      input.value = buttonClicked.title; // No slash for the first value
+    }
+  });
+});
+
+//LX REMOVER
+document.querySelectorAll('.remove').forEach(button => {
+  button.addEventListener('click', function(event) {
+    // Get the button that was clicked
+    let buttonClicked = event.target;
+    // Get the group ID from the button
+    let groupId = buttonClicked.dataset.group;
+    // Find the input with matching ID
+    let input = document.getElementById(groupId);
+    // Split the input value into an array of strings
+    let inputValues = input.value.split(' / ');
+    // Remove the last element of the array
+    inputValues.pop();
+    // Join the array back into a string
+    input.value = inputValues.join(' / ');
+  });
+});
