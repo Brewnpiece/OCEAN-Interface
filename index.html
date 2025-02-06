@@ -32,7 +32,7 @@
           <td>
             <h3>Robot Side</h3>
           </td>
-          <td> <select id="robot-side" style="width: 100px;">
+          <td> <select name="Side" id="robot-side" style="width: 100px;">
               <option>Red 1</option>
               <option>Red 2</option>
               <option>Red 3</option>
@@ -45,7 +45,7 @@
           <td>
             <h3>Team #</h3>
           </td>
-          <td><input type="text" id="team-number"></td>
+          <td><input name="Team-Number" type="text" id="team-number"></td>
         </tr>
       </table>
 
@@ -61,26 +61,26 @@
       <h3>Coral Scores</h3>
       <div class="container2">
         <button data-group="Coral_A" type="button" class="remove">-</button>
-        <input id="Coral_A" type="text" disabled="true" dir="rtl"/>
+        <input name="Coral-Auton" id="Coral_A" type="text" disabled="true" dir="rtl"/>
         <button type="Button" onclick="swipePage(1)">+</button >
       </div>
 
       <h3>DeAlgea Amount</h3>
       <div class="container2">
         <button data-group="DeAlgae_A" type="button" class="remove">-</button>
-        <input id="DeAlgae_A" type="text" disabled="true" dir="rtl"/>
+        <input name="DeAlgae-Auton" id="DeAlgae_A" type="text" disabled="true" dir="rtl"/>
         <button type="Button" onclick="swipePage(2)">+</button >
       </div>
       <h3>Algea Processed</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
-        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
+        <input name="Algae-Processed-Auton" type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
         <button class="inc button" type="Button" >+</button >
       </div>
       
       <div class="container2">
         <label class="checkbox" for="leave">Left Start Zone?</label>
-        <input type="checkbox" id="leave">
+        <input  name="Left-Start-Zone" type="checkbox" id="leave">
       </div>
 
       <div class="container2">
@@ -104,25 +104,25 @@
       <h3>Coral Scores</h3>
       <div class="container2">
         <button data-group="Coral_T" type="button" class="remove">-</button>
-        <input id="Coral_T" type="text" disabled="true" dir="rtl"/>
+        <input name="Coral-Tele" id="Coral_T" type="text" disabled="true" dir="rtl"/>
         <button type="Button" onclick="swipePage(1)">+</button >
       </div>
       <h3>DeAlgea Amount</h3>
       <div class="container2">
         <button data-group="DeAlgae_T" type="button" class="remove">-</button>
-        <input id="DeAlgae_T" type="text" disabled="true" dir="rtl"/>
+        <input name="DeAlgae-Tele" id="DeAlgae_T" type="text" disabled="true" dir="rtl"/>
         <button type="Button" onclick="swipePage(2)">+</button >
       </div>
       <h3>Algae Processed</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
-        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
+        <input name="Algae-Processed-Tele" type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
         <button class="inc button" type="Button">+</button>
       </div>
       <h3>Barge Scores</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
-        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
+        <input name="Barge-Tele" type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
         <button class="inc button" type="Button">+</button>
       </div>
       <div class="container2">
@@ -147,18 +147,18 @@
       <table class="container2">
         <tr>
           <td>Parked</td>
-          <td><input id ="parked" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
+          <td><input name="Parked" id ="parked" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
         <td>Shallow</td>
-        <td><input id="shallow" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
+        <td><input name="Shallow" id="shallow" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
         <td>Deep</td>
-        <td><input id="deep" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
+        <td><input name="Deep" id="deep" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
       </table>
       <h3>Comments</h3>
       <div class="container2">
-        <input type="text" id="comments">
+        <input name="Comments" type="text" id="comments">
       </div>
       <div class="container2">
         <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
