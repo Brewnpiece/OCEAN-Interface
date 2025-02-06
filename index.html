@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  <form
+    method="POST" action="   ">
   <div id="pages">
     <div id="ID" style="display: block">
       <h1>OCEAN Match Interface</h1>
@@ -48,7 +50,7 @@
       </table>
 
       <div class="container2">
-        <button class="updater" onclick="swipePage(1)">Next</button>
+        <button class="updater" type="Button"onclick="swipePage(1)">Next</button>
       </div>
     </div>
     <div id="Auton" style="display: none;">
@@ -56,69 +58,102 @@
 
       <br>
 
-      <h3>Speaker Scores</h3>
+      <h3>Coral Scores</h3>
       <div class="container2">
-        <button class="dec button">-</button>
-        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
-        <button class="inc button">+</button>
+        <button data-group="Coral_A" type="button" class="remove">-</button>
+        <input id="Coral_A" type="text" disabled="true" dir="rtl"/>
+        <button type="Button" onclick="swipePage(1)">+</button >
       </div>
 
-      <h3>Amp Scores</h3>
+      <h3>DeAlgea Amount</h3>
       <div class="container2">
-        <button class="dec button">-</button>
-        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
-        <button class="inc button">+</button>
+        <button data-group="DeAlgae_A" type="button" class="remove">-</button>
+        <input id="DeAlgae_A" type="text" disabled="true" dir="rtl"/>
+        <button type="Button" onclick="swipePage(2)">+</button >
       </div>
-
+      <h3>Algea Processed</h3>
+      <div class="container2">
+        <button class="dec button" type="Button">-</button>
+        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
+        <button class="inc button" type="Button" >+</button >
+      </div>
+      
       <div class="container2">
         <label class="checkbox" for="leave">Left Start Zone?</label>
         <input type="checkbox" id="leave">
       </div>
 
       <div class="container2">
-        <button class="updater" onclick="swipePage(-1)">Prev</button>
-        <button class="updater" onclick="swipePage(1)">Next</button>
+        <button class="updater" onclick="swipePage(-1)" type="Button">Prev</button>
+        <button class="updater" onclick="swipePage(3)" type="Button">Next</button>
       </div>
+    </div>
+    <div id="Coral Split_A" style="display: none;">
+         <button id="four" data-group="Coral_A" type="button" class="update" title="L4" onclick="swipePage(-1)">L4</button>
+       <button id="four" data-group="Coral_A" type="button" class="update" title="L3" onclick="swipePage(-1)">L3</button>
+      <button id="four" data-group="Coral_A" type="button" class="update" title="L2" onclick="swipePage(-1)">L2</button>
+       <button id="four" data-group="Coral_A" type="button" class="update" title="L1" onclick="swipePage(-1)">L1</button>
+
+    </div>
+    <div id="Algea Split_A" style="display: none;">
+       <button id="two" data-group="DeAlgae_A" type="button" class="update" title="L3" onclick="swipePage(-2)">L3</button>
+      <button id="two" data-group="DeAlgae_A" type="button" class="update" title="L2" onclick="swipePage(-2)">L2</button>
     </div>
     <div id="Teleop" style="display: none;">
       <h1>Teleop</h1> <br>
-      <h3>Speaker Scores</h3>
+      <h3>Coral Scores</h3>
       <div class="container2">
-        <button class="dec button">-</button>
+        <button data-group="Coral_T" type="button" class="remove">-</button>
+        <input id="Coral_T" type="text" disabled="true" dir="rtl"/>
+        <button type="Button" onclick="swipePage(1)">+</button >
+      </div>
+      <h3>DeAlgea Amount</h3>
+      <div class="container2">
+        <button data-group="DeAlgae_T" type="button" class="remove">-</button>
+        <input id="DeAlgae_T" type="text" disabled="true" dir="rtl"/>
+        <button type="Button" onclick="swipePage(2)">+</button >
+      </div>
+      <h3>Algae Processed</h3>
+      <div class="container2">
+        <button class="dec button" type="Button">-</button>
         <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
-        <button class="inc button">+</button>
+        <button class="inc button" type="Button">+</button>
       </div>
-      <h3>Amp Scores</h3>
+      <h3>Barge Scores</h3>
       <div class="container2">
-        <button class="dec button">-</button>
+        <button class="dec button" type="Button">-</button>
         <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
-        <button class="inc button">+</button>
+        <button class="inc button" type="Button">+</button>
       </div>
       <div class="container2">
-        <button class="updater" onclick="swipePage(-1)">Prev</button>
-        <button class="updater" onclick="swipePage(1)">Next</button>
+        <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
+        <button class="updater" onclick="swipePage(3)" type="Button">Next</button>
       </div>
+    </div>
+    <div id="Coral Split_T" style="display: none;">
+         <button id="four" data-group="Coral_T" type="button" class="update" title="L4" onclick="swipePage(-1)">L4</button>
+       <button id="four" data-group="Coral_T" type="button" class="update" title="L3" onclick="swipePage(-1)">L3</button>
+      <button id="four" data-group="Coral_T" type="button" class="update" title="L2" onclick="swipePage(-1)">L2</button>
+       <button id="four" data-group="Coral_T" type="button" class="update" title="L1" onclick="swipePage(-1)">L1</button>
+    </div>
+    <div id="Algea Split_T" style="display: none;">
+      <button id="two" data-group="DeAlgae_T" type="button" class="update" title="L3" onclick="swipePage(-2)">L3</button>
+      <button id="two" data-group="DeAlgae_T" type="button" class="update" title="L2" onclick="swipePage(-2)">L2</button>
     </div>
     <div id="Endgame" style="display: none;">
       <h1>Endgame</h1>
       <br>
-      <h3>Notes in Trap</h3>
-      <div class="container2">
-        <button class="dec button">-</button>
-        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
-        <button class="inc button">+</button>
-      </div>
       <h3>Final Status</h3>
       <table class="container2">
         <tr>
           <td>Parked</td>
           <td><input id ="parked" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
-        <td>Stage</td>
-        <td><input id="stage" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
+        <td>Shallow</td>
+        <td><input id="shallow" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
-        <td>None</td>
-        <td><input id="none" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
+        <td>Deep</td>
+        <td><input id="deep" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
       </table>
       <h3>Comments</h3>
@@ -126,8 +161,8 @@
         <input type="text" id="comments">
       </div>
       <div class="container2">
-        <button class="updater" onclick="swipePage(-1)">Prev</button>
-        <button class="updater" onclick="swipePage(1)">Next</button>
+        <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
+        <button class="updater" onclick="swipePage(1)" type="Button">Next</button>
       </div>
     </div>
 
@@ -135,17 +170,19 @@
       <h1>Data</h1>
 
       <div class="container1">
-        <button type="button" onclick="myFunction()">Submit</button>
+        <button type="submit" onclick="myFunction()">Submit</button>
       </div>
       <p id="output"></p>
       <div class="container2">
-        <button class="updater" onclick="swipePage(-1)">Prev</button>
+        <button class="updater" onclick="swipePage(-1)" type="Button">Prev</button>
       </div>
     </div>
+     <div id="DataSent" style="display: none;">Thanks!</div>
   </div>
 
 
   <script src="script.js"></script>
+    </form>
 </body>
 
 </html>
