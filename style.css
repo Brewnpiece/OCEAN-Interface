@@ -58,6 +58,16 @@ h3 {
   font-size: 16px;
 }
 
+button[type="button"]{
+  border: 1pxblack;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .checkbox {
   font-weight: bolder;
   font-size: 1.17em;
@@ -111,4 +121,25 @@ input[type='checkbox']:checked {
 
 input[type='select'] {
   width: 100px;
+}
+
+input[type='text'] {
+  width: 110px;
+  height: 50px;
+  border: 1px solid black;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+
+#four {
+  width: 100%; 
+  height: 200px; 
+  margin-bottom: 10px;"
+}
+
+#two {
+  width: 100%; 
+  height: 400px; 
+  margin-bottom: 10px;"
 }
