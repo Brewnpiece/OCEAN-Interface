@@ -129,13 +129,8 @@ document.querySelectorAll('.remove').forEach(button => {
   });
 });
 
-//FORM HELP
-<form name="submit-to-google-sheet">
-  <input name="email" type="email" placeholder="Email" required>
-  <button type="submit">Send</button>
-</form>
-
-  const scriptURL = '<SCRIPT URL>'
+//FORM CRUD
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyrnSy8T4z5g1M99gHYRTkfo3P9cg_8gvy23i5B7zJoXfUALuyis74UvGATnkDLeRxCsg/exec'
   const form = document.forms['submit-to-google-sheet']
 
   form.addEventListener('submit', e => {
