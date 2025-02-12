@@ -1,7 +1,7 @@
 body {
   background: transparent;
   /* Make it white if you need */
-  color: #000000;
+  color: #ffffff;
   justify-content: center;
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -12,12 +12,15 @@ h1 {
   margin: 15px;
   text-align: center;
   padding: px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 h3 {
   margin: 0px;
   text-align: center;
-  padding: px;
+  padding: 5px;
+  font-size: 25px;
 }
 
 .container1 {
@@ -40,7 +43,7 @@ h3 {
 .counter-display {
   width: 110px;
   height: 50px;
-  border: 1px solid black;
+  border: 1px solid white;
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
@@ -58,14 +61,16 @@ h3 {
   font-size: 16px;
 }
 
-button[type="button"]{
+button[type="button"] {
   border: 1pxblack;
+  border-color: #ffffff;
+  background-color: #ffffff;
   color: #000000;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .checkbox {
@@ -101,7 +106,12 @@ input[type='checkbox'] {
 }
 
 input[type='checkbox']:checked {
-  background: #abd;
+  background: #9ab3e4;
+}
+
+input[type='text'] {
+  background: #fafafa;
+  font-size: 22px;
 }
 
 .updater {
@@ -125,21 +135,31 @@ input[type='select'] {
 
 input[type='text'] {
   width: 110px;
-  height: 50px;
-  border: 1px solid black;
+  height: 49px;
+  border: 1px solid white;
   vertical-align: middle;
   line-height: 50px;
 }
 
 
 #four {
-  width: 100%; 
-  height: 200px; 
-  margin-bottom: 10px;"
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  font-size: 300%;
+  font-weight: bold;
+  border-color: black;
 }
 
 #two {
-  width: 100%; 
-  height: 400px; 
-  margin-bottom: 10px;"
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10px;
+  font-display: ;
+}
+
+.form {
+  font-size: 20px;
+  text-align: center;
+  font-style: italic;
 }
