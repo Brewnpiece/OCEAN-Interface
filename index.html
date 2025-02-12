@@ -7,13 +7,14 @@
   <title>OCEAN Interface</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+  <body style="background-image: url('background.svg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
 <body>
   <form name="submit-to-google-sheet">
   <div id="pages">
     <div id="ID" style="display: block">
       <h1>OCEAN Match Interface</h1>
       <br>
-      <table class="container2" style="width: 90%; text-align: center;">
+      <table class="container2" style="width: 100%; text-align: center;">
         <tr>
           <td>
             <h3>Scouter Initials</h3>
@@ -56,20 +57,20 @@
 
       <br>
 
-      <h3>Coral Scores</h3>
+      <h3>Coral</h3>
       <div class="container2">
         <button data-group="Coral_A" type="button" class="remove">-</button>
         <input name="Coral-Auton" id="Coral_A" type="text" dir="rtl"/>
         <button type="Button" onclick="swipePage(1)">+</button >
       </div>
 
-      <h3>DeAlgea Amount</h3>
+      <h3>DeAlgea</h3>
       <div class="container2">
-        <button data-group="DeAlgae_A" type="button" class="remove">-</button>
-        <input name="DeAlgae-Auton" id="DeAlgae_A" type="text" dir="rtl"/>
-        <button type="Button" onclick="swipePage(2)">+</button >
+        <button class="dec button" type="Button">-</button>
+        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
+        <button class="inc button" type="Button" >+</button >
       </div>
-      <h3>Algea Processed</h3>
+      <h3>Processer</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
         <input name="Algae-Processed-Auton" type="text" class="counter-display" id="auton_speaker" value="0" >
@@ -99,25 +100,25 @@
     </div>
     <div id="Teleop" style="display: none;">
       <h1>Teleop</h1> <br>
-      <h3>Coral Scores</h3>
+      <h3>Coral</h3>
       <div class="container2">
         <button data-group="Coral_T" type="button" class="remove">-</button>
         <input name="Coral-Tele" id="Coral_T" type="text" dir="rtl"/>
         <button type="Button" onclick="swipePage(1)">+</button >
       </div>
-      <h3>DeAlgea Amount</h3>
+      <h3>DeAlgea</h3>
       <div class="container2">
-        <button data-group="DeAlgae_T" type="button" class="remove">-</button>
-        <input name="DeAlgae-Tele" id="DeAlgae_T" type="text"  dir="rtl"/>
-        <button type="Button" onclick="swipePage(2)">+</button >
+    <button class="dec button" type="Button">-</button>
+        <input type="text" class="counter-display" id="auton_speaker" value="0" disabled="">
+        <button class="inc button" type="Button" >+</button >
       </div>
-      <h3>Algae Processed</h3>
+      <h3>Processor</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
         <input name="Algae-Processed-Tele" type="text" class="counter-display" id="auton_speaker" value="0" >
         <button class="inc button" type="Button">+</button>
       </div>
-      <h3>Barge Scores</h3>
+      <h3>Net</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
         <input name="Barge-Tele" type="text" class="counter-display" id="auton_speaker" value="0">
@@ -153,6 +154,8 @@
         <td>Deep</td>
         <td><input name="Deep" id="deep" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
         </tr>
+                <td>Failed Climb</td>
+        <td><input id="failed" type="checkbox" name="checkbox" onclick="onlyOne(this)"></td>
       </table>
       <h3>Comments</h3>
       <div class="container2">
