@@ -183,13 +183,8 @@ input[type='text'] {
   text-align: center;
 }
 
-#overlay {
-  position: fixed; 
-  width: 100vw; 
-  height: 100vh; 
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2; 
-}
+ .imageContainer {
+       width:200px; 
+       height:200px; 
+       background-image: url("ZdPK.gif");
+ }
