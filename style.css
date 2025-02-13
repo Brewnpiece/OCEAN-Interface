@@ -185,8 +185,12 @@ input[type='text'] {
 
  .imageContainer {
       display: flex;
-      justify-content: center; /* Align horizontal */
+      justify-content: center;
       align-items: center;
        background-image: url("ZdPK.gif");
-       background-size: cover;
+         background-position: 50%;
+         background-repeat: no-repeat;
+       height: 600px;
+   font-weight: bold;
+
  }
