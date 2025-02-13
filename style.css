@@ -73,6 +73,20 @@ button[type="button"] {
   font-size: 17px;
 }
 
+button[type="submit"] {
+  border: 1pxblack;
+  border-color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+  width: 110px;
+  height: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+}
+
 .checkbox {
   font-weight: bolder;
   font-size: 1.17em;
