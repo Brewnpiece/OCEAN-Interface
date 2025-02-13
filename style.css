@@ -177,3 +177,8 @@ input[type='text'] {
   text-align: center;
   font-style: italic;
 }
+
+#DataSent {
+  font-size: 50px;
+  text-align: center;
+}
