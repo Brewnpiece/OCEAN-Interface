@@ -87,40 +87,16 @@ button[type="submit"] {
   font-size: 17px;
 }
 
-.checkbox {
-  font-weight: bolder;
-  font-size: 1.17em;
-  line-height: 18.72px;
-}
-
 input[type='checkbox'] {
-  -webkbody {
-    background: transparent;
-    /* Make it white if you need */
-    color: #000000;
-    /* Center content horizontally */
-    display: flex;
-    flex-direction: column;
-    /* Arrange items vertically */
-    align-items: center;
-    /* Center items horizontally */
-    justify-content: center;
-    /* Center items vertically */
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  /* ... rest of your CSS ... */
-  it-appearance: none;
   width: 30px;
   height: 30px;
-  background: white;
   border-radius: 5px;
-  border: 2px solid #555;
 }
 
 input[type='checkbox']:checked {
-  background: #9ab3e4;
+  background-color: rgb(0, 63, 105);
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 input[type='text'] {
@@ -194,3 +170,10 @@ input[type='text'] {
    font-weight: bold;
 
  }
+
+ #comments {
+  height: 100px;
+  width: 300px;
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

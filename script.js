@@ -84,13 +84,12 @@ function swipePage(increment) {
   }
 }
 
-
 //CHECKBOXES
 function onlyOne(checkbox) {
-  var checkboxes = document.getElementsByName(checkbox.name)
+  var checkboxes = Array.from(document.getElementsByClassName('checkboxes'));
   checkboxes.forEach((item) => {
-    if (item !== checkbox) item.checked = false
-  })
+    if (item !== checkbox) item.checked = false;
+  });
 }
 
 //LX ADDER
