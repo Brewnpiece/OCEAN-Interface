@@ -1,46 +1,43 @@
-//GOD HAVE MERCY
+//RUN IT BACK
+
+//ROBOT SIDE COLOR CHANGE
+const robotSide = document.getElementById('robot-side');
+
+function changeParentColor() {
+
+  if (robotSide.value.includes('Red')) {
+    robotSide.style.backgroundColor = "rgb(235, 109, 109)";}
+
+  else if (robotSide.value.includes("Blue")) {
+    robotSide.style.backgroundColor = "rgb(109, 149, 235)";}
+ }
+
+robotSide.addEventListener("change", changeParentColor);
+
+
 
 //INCREMENT BUTTON
 let incrementButton = document.getElementsByClassName('inc');
 var decrementButton = document.getElementsByClassName('dec');
-//console.log(incrementButton);
-//console.log(decrementButton);
-for (var i = 0; i < incrementButton.length; i++) {
-  var button = incrementButton[i];
-  button.addEventListener('click', function() {
-
-    var buttonClicked = event.target;
-    //console.log(buttonClicked);
-    var input = buttonClicked.parentElement.children[1]
-    //console.log(input)
-    var inputValue = input.value;
-    //console.log(inputValue);
-    var newValue = parseInt(inputValue) + 1;
-    //console.log(newValue);
-    input.value = newValue;
-  })
+for (let i = 0; i < incrementButton.length; i++) {
+  const button = incrementButton[i];
+  button.addEventListener('click', function(ev) {
+    const buttonClicked = ev.currentTarget;
+    const input = buttonClicked.parentElement.querySelector('input');
+    const inputValue = parseInt(input.value) || 0;
+    input.value = inputValue + 1;
+  });
 }
 
-for (var i = 0; i < decrementButton.length; i++) {
-  var button = decrementButton[i];
-  button.addEventListener('click', function() {
-
-    var buttonClicked = event.target;
-    //console.log(buttonClicked);
-    var input = buttonClicked.parentElement.children[1]
-    //console.log(input)
-    var inputValue = input.value;
-    //console.log(inputValue);
-    var newValue = parseInt(inputValue) - 1;
-    //console.log(newValue);
-    input.value = newValue;
-    if (newValue >= 0) {
-      input.Value = newValue;
-    }
-    else {
-      input.value = 0;
-    }
-  })
+for (let i = 0; i < decrementButton.length; i++) {
+  const button = decrementButton[i];
+  button.addEventListener('click', function(ev) {
+    const buttonClicked = ev.currentTarget;
+    const input = buttonClicked.parentElement.querySelector('input');
+    const inputValue = parseInt(input.value) || 0;
+    const newValue = inputValue - 1;
+    input.value = newValue >= 0 ? newValue : 0;
+  });
 }
 
 //SUBMIT FUNCTION
@@ -73,14 +70,13 @@ function myFunction() {
 //PAGE SWIPER
 var slide = 0;
 function swipePage(increment) {
-  if (i > 0) {
-    slides = document.getElementById("pages").children
-    if (slide + increment < slides.length && slide + increment >= 0) {
-      slides[slide].style.display = "none";
-      slide += increment;
-      window.scrollTo(0, 0);
-      slides[slide].style.display = "block";
-    }
+  const slides = document.getElementById('pages').children;
+  if (!slides || slides.length === 0) return;
+  if (slide + increment < slides.length && slide + increment >= 0) {
+    slides[slide].style.display = 'none';
+    slide += increment;
+    window.scrollTo(0, 0);
+    slides[slide].style.display = 'block';
   }
 }
 
