@@ -83,18 +83,11 @@
       </div>
       
       <div class="row-wrapper">
-        <select class="dropdown">
-              <option disabled hidden selected>Accuracy</option>
-              <option>100-90%</option>
-              <option>89%-70%</option>
-              <option>70%-49%</option>
-              <option>< 50%</option>
-
-            </select>
-      </div>
-      
+        <button class="selector accuracy" type="Button" onclick="swipePage(1)">Accuracy</button>
+        </div>
+    
       <div class="row-wrapper">
-          <button class="selector" type="Button">Climb</button>
+          <button  class="selector climb" type="Button" onclick="swipePage(2)">Climb</button>
       </div>
 
       <div class="container2">
@@ -103,19 +96,18 @@
       </div>
     </div>
 
-    <!-- CORAL PAGE AUTON (OLD) -->
-    <div id="Coral Split_A" style="display: none;">
-         <button id="four" data-group="Coral_A" type="button" class="update" title="L4" onclick="swipePage(-1)">L4</button>
-       <button id="four" data-group="Coral_A" type="button" class="update" title="L3" onclick="swipePage(-1)">L3</button>
-      <button id="four" data-group="Coral_A" type="button" class="update" title="L2" onclick="swipePage(-1)">L2</button>
-       <button id="four" data-group="Coral_A" type="button" class="update" title="L1" onclick="swipePage(-1)">L1</button>
-
+    <!-- ACCURACY AUTON -->
+    <div class="accuracy-four" style="display: none;">
+      <button type="button" class="four" onclick="swipePage(-1)">100-90%</button>
+      <button type="button" class="four" onclick="swipePage(-1)">89%-70%</button>
+      <button type="button" class="four" onclick="swipePage(-1)">70%-49%</button>
+      <button type="button" class="four" onclick="swipePage(-1)">< 50%</button>
     </div>
 
-    <!-- ALGAE AUTON (OLD) -->
-    <div id="Algea Split_A" style="display: none;">
-       <button id="two" data-group="DeAlgae_A" type="button" class="update" title="L3" onclick="swipePage(-2)">L3</button>
-      <button id="two" data-group="DeAlgae_A" type="button" class="update" title="L2" onclick="swipePage(-2)">L2</button>
+    <!-- CLIMB AUTON -->
+    <div class="climb-two" style="display: none;">
+       <button class="two" type="button" onclick="swipePage(-2)">L2</button>
+      <button class="two" type="button" onclick="swipePage(-2)">L1</button>
     </div>
 
     <!-- TELEOP -->
@@ -128,34 +120,17 @@
     <h3>Teleop Fuel</h3>
      <div class="fuel-split" id="Fuel_Teleop">
       <input class="fuel-counter" type="text" value="0"/>
+        <div class="row-wrapper">
+         <button class="fuel-button" type="Button" value="1">+1</button>
+         <button class="fuel-button" type="Button" value="5">+5</button>
+         <button class="fuel-button" type="Button" value="10">+10</button>
+         <button class="fuel-button" type="Button" value="Undo">Undo</button>
+       </div>
+      </div>
+
       <div class="row-wrapper">
-        <button class="fuel-button" type="Button" value="1">+1</button>
-        <button class="fuel-button" type="Button" value="5">+5</button>
-        <button class="fuel-button" type="Button" value="10">+10</button>
-        <button class="fuel-button" type="Button" value="Undo">Undo</button>
-      </div>
-      </div>
-
-      <h3>DeAlgea</h3>
-      <div class="container2">
-        <button class="dec button" type="Button">-</button>
-        <input name="DeAlgae-Tele" type="text" class="counter-display" id="auton_speaker" value="0">
-        <button class="inc button" type="Button" >+</button >
-      </div>
-    
-      <h3>Processor</h3>
-      <div class="container2">
-        <button class="dec button" type="Button">-</button>
-        <input name="Algae-Processed-Tele" type="text" class="counter-display" id="auton_speaker" value="0" >
-        <button class="inc button" type="Button">+</button>
-      </div>
-
-      <h3>Net</h3>
-      <div class="container2">
-        <button class="dec button" type="Button">-</button>
-        <input name="Barge-Tele" type="text" class="counter-display" id="auton_speaker" value="0">
-        <button class="inc button" type="Button">+</button>
-      </div>
+        <button class="selector accuracy" type="Button" onclick="swipePage(1)">Accuracy</button>
+        </div>    
 
       <div class="container2">
         <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
@@ -163,12 +138,12 @@
       </div>
     </div>
 
-    <!-- CORAL PAGE TELEOP (OLD) -->
-    <div id="Coral Split_T" style="display: none;">
-         <button id="four" data-group="Coral_T" type="button" class="update" title="L4" onclick="swipePage(-1)">L4</button>
-       <button id="four" data-group="Coral_T" type="button" class="update" title="L3" onclick="swipePage(-1)">L3</button>
-      <button id="four" data-group="Coral_T" type="button" class="update" title="L2" onclick="swipePage(-1)">L2</button>
-       <button id="four" data-group="Coral_T" type="button" class="update" title="L1" onclick="swipePage(-1)">L1</button>
+    <!-- ACCURACY TELEOP -->
+    <div class="accuracy-four" style="display: none;">
+      <button type="button" class="four" onclick="swipePage(-1)">100-90%</button>
+      <button type="button" class="four" onclick="swipePage(-1)">89%-70%</button>
+      <button type="button" class="four" onclick="swipePage(-1)">70%-49%</button>
+      <button type="button" class="four" onclick="swipePage(-1)">< 50%</button>
     </div>
   
     <!-- ALGAE PAGE TELEOP (OLD) -->

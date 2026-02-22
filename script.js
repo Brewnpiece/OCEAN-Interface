@@ -2,7 +2,6 @@
 
 //ROBOT SIDE COLOR CHANGE
 const robotSide = document.getElementById('robot-side');
-
 robotSide.addEventListener("change", () => {
 
   if (robotSide.value.includes('Red')) {
@@ -15,14 +14,12 @@ robotSide.addEventListener("change", () => {
 
 //TOGGLE BUTTONS
 const toggleState = document.querySelectorAll('.toggle');
-
 toggleState.forEach(e => {e.addEventListener("click", () => {
 
   e.value = (e.value =="0") ? "1" : "0";
-
   e.style.backgroundColor = (e.value === "0") ? (e.style.backgroundColor = "white", e.style.borderColor = "white") : (e.style.backgroundColor = "#C38C26", e.style.borderColor = "#C38C26");
   
-}); 
+  }); 
 });
 
 //FUEL UPDATER
@@ -54,6 +51,28 @@ fuelElements.forEach(e => {
   });
 });
 
+//ACCURACY/CLIMB BUTTONS !CAN MAKE MORE EFFICIENT!
+const AccuracyElements = document.querySelectorAll('.four');
+const ClimbElements = document.querySelectorAll('.two');
+
+AccuracyElements.forEach(e => {
+  e.addEventListener("click", () => {
+    let NewAccuracyValue = e.innerHTML
+    const parent = e.closest('.accuracy-four')
+    const display = document.querySelector('.accuracy');
+    display.innerHTML = NewAccuracyValue;
+  });
+});
+
+ClimbElements.forEach(e => {
+  e.addEventListener("click", () => {
+    let NewClimbValue = e.innerHTML
+    const parent = e.closest('.climb-two')
+    const display = document.querySelector('.climb');
+    display.innerHTML = NewClimbValue;
+  });
+});
+
 //SUBMIT FUNCTION
 function myFunction() {
   // Get all input elements with the class 'counter-display'
@@ -74,7 +93,7 @@ function myFunction() {
     output += `${input.value}~`;
   });
   output += `${comments}`;
-  
+
   document.getElementById('output').innerHTML = output;
   console.log(output)
 }
