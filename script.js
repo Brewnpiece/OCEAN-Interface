@@ -30,7 +30,6 @@ const fuelElements = document.querySelectorAll('.fuel-button');
 let history = [];
 
 fuelElements.forEach(e => {
-
   e.addEventListener("click", () => {
 
   const parent = e.closest('.fuel-split');
@@ -50,38 +49,10 @@ fuelElements.forEach(e => {
       fuelCurrentNumber += fuelAddNumber;
       count.value = fuelCurrentNumber;
       history.push(fuelAddNumber);
-      
     };
 
   });
-
 });
-
-
-//INCREMENT BUTTON
-let incrementButton = document.getElementsByClassName('inc');
-var decrementButton = document.getElementsByClassName('dec');
-for (let i = 0; i < incrementButton.length; i++) {
-  const button = incrementButton[i];
-  button.addEventListener('click', function(ev) {
-    const buttonClicked = ev.currentTarget;
-    const input = buttonClicked.parentElement.querySelector('input');
-    const inputValue = parseInt(input.value) || 0;
-    input.value = inputValue + 1;
-  });
-
-}
-
-for (let i = 0; i < decrementButton.length; i++) {
-  const button = decrementButton[i];
-  button.addEventListener('click', function(ev) {
-    const buttonClicked = ev.currentTarget;
-    const input = buttonClicked.parentElement.querySelector('input');
-    const inputValue = parseInt(input.value) || 0;
-    const newValue = inputValue - 1;
-    input.value = newValue >= 0 ? newValue : 0;
-  });
-}
 
 //SUBMIT FUNCTION
 function myFunction() {
@@ -103,8 +74,7 @@ function myFunction() {
     output += `${input.value}~`;
   });
   output += `${comments}`;
-
-  // Display the output in a paragraph element (you'll need to add this to your HTML)
+  
   document.getElementById('output').innerHTML = output;
   console.log(output)
 }

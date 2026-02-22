@@ -164,6 +164,7 @@ input[type='text'] {
   height: 6.5vh;
   font-size: 20px;
   text-align: center;
+  text-transform: uppercase;
 }
 
 #DataSent {
@@ -200,4 +201,11 @@ input[type='text'] {
 
 th, td {
     padding: 2vh;
+}
+
+.dropdown {
+  width: 90vw;
+  height: 7.5vh;
+  text-align: center;
+  font-size: 20px;
 }
