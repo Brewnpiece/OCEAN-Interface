@@ -51,7 +51,7 @@ fuelElements.forEach(e => {
   });
 });
 
-//ACCURACY/CLIMB BUTTONS !CAN MAKE MORE EFFICIENT!
+//ACCURACY/CLIMB BUTTONS FIX FIX
 const AccuracyElements = document.querySelectorAll('.four');
 const ClimbElements = document.querySelectorAll('.two');
 
