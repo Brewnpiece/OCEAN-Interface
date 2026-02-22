@@ -38,6 +38,7 @@
         <tr>
           <td><h3>Robot Side</h3></td>
           <td> <select class="ID" name="Side" id="robot-side">
+              <option disabled hidden selected>SELECT</option>
               <option class="Red">Red 1</option>
               <option class="Red">Red 2</option>
               <option class="Red">Red 3</option>
@@ -65,20 +66,20 @@
 
       <br>
 
-      <h3>Fuel</h3>
-      <div class="fuel-split">
-        <input class="fuel-counter" id="Fuel_Auton" type="text"/>
+      <h3>Auton Fuel</h3>
+      <div class="fuel-split" id="Fuel_Auton">
+        <input class="fuel-counter" type="text" value="0"/>
         <div class="row-wrapper">
-        <button class="fuel-button" type="Button" name="1">+1</button>
-        <button class="fuel-button" type="Button" name="5">+5</button>
-        <button class="fuel-button" type="Button" name="10">+10</button>
-        <button class="fuel-button" type="Button" name="Undo">Undo</button>
+        <button class="fuel-button" type="Button" value="1">+1</button>
+        <button class="fuel-button" type="Button" value="5">+5</button>
+        <button class="fuel-button" type="Button" value="10">+10</button>
+        <button class="fuel-button" type="Button" value="Undo">Undo</button>
         </div>
       </div>
 
       <div class="row-wrapper">
-        <button class="selector" type="button">Human</button>
-        <button class="selector" type="Button">Center</button >
+        <button class="selector toggle" type="button" value="0">Human</button>
+        <button class="selector toggle" type="Button" value="0">Center</button >
       </div>
       
       <div class="row-wrapper">
@@ -112,31 +113,43 @@
 
     <!-- TELEOP -->
     <div id="Teleop" style="display: none;">
-      <h1>Teleop</h1> <br>
-      <h3>Coral</h3>
-      <div class="container2">
-        <button data-group="Coral_T" type="button" class="remove">-</button>
-        <input name="Coral-Tele" id="Coral_T" type="text" dir="rtl"/>
-        <button type="Button" onclick="swipePage(1)">+</button >
+
+      <h1>Teleop</h1>
+
+      <br>
+      
+    <h3>Teleop Fuel</h3>
+     <div class="fuel-split" id="Fuel_Teleop">
+      <input class="fuel-counter" type="text" value="0"/>
+      <div class="row-wrapper">
+        <button class="fuel-button" type="Button" value="1">+1</button>
+        <button class="fuel-button" type="Button" value="5">+5</button>
+        <button class="fuel-button" type="Button" value="10">+10</button>
+        <button class="fuel-button" type="Button" value="Undo">Undo</button>
       </div>
+      </div>
+
       <h3>DeAlgea</h3>
       <div class="container2">
-    <button class="dec button" type="Button">-</button>
+        <button class="dec button" type="Button">-</button>
         <input name="DeAlgae-Tele" type="text" class="counter-display" id="auton_speaker" value="0">
         <button class="inc button" type="Button" >+</button >
       </div>
+    
       <h3>Processor</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
         <input name="Algae-Processed-Tele" type="text" class="counter-display" id="auton_speaker" value="0" >
         <button class="inc button" type="Button">+</button>
       </div>
+
       <h3>Net</h3>
       <div class="container2">
         <button class="dec button" type="Button">-</button>
         <input name="Barge-Tele" type="text" class="counter-display" id="auton_speaker" value="0">
         <button class="inc button" type="Button">+</button>
       </div>
+
       <div class="container2">
         <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
         <button class="updater" onclick="swipePage(3)" type="Button">Next</button>

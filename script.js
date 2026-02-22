@@ -3,17 +3,59 @@
 //ROBOT SIDE COLOR CHANGE
 const robotSide = document.getElementById('robot-side');
 
-function changeParentColor() {
+robotSide.addEventListener("change", () => {
 
   if (robotSide.value.includes('Red')) {
     robotSide.style.backgroundColor = "rgb(235, 109, 109)";}
 
   else if (robotSide.value.includes("Blue")) {
     robotSide.style.backgroundColor = "rgb(109, 149, 235)";}
- }
 
-robotSide.addEventListener("change", changeParentColor);
+ });
 
+//TOGGLE BUTTONS
+const toggleState = document.querySelectorAll('.toggle');
+
+toggleState.forEach(e => {e.addEventListener("click", () => {
+
+  e.value = (e.value =="0") ? "1" : "0";
+
+  e.style.backgroundColor = (e.value === "0") ? (e.style.backgroundColor = "white", e.style.borderColor = "white") : (e.style.backgroundColor = "#C38C26", e.style.borderColor = "#C38C26");
+  
+}); 
+});
+
+//FUEL UPDATER
+const fuelElements = document.querySelectorAll('.fuel-button');
+let history = [];
+
+fuelElements.forEach(e => {
+
+  e.addEventListener("click", () => {
+
+  const parent = e.closest('.fuel-split');
+  const count = parent.querySelector('.fuel-counter');
+  let fuelCurrentNumber = Number(count.value);
+
+    if (e.value == "Undo"){
+      if (history.length > 0){
+        let lastValue = history.pop();
+        fuelCurrentNumber -= lastValue;
+        count.value = Math.max(0, fuelCurrentNumber);
+        };
+      }
+
+    else {
+      let fuelAddNumber = Number(e.value);
+      fuelCurrentNumber += fuelAddNumber;
+      count.value = fuelCurrentNumber;
+      history.push(fuelAddNumber);
+      
+    };
+
+  });
+
+});
 
 
 //INCREMENT BUTTON
@@ -27,6 +69,7 @@ for (let i = 0; i < incrementButton.length; i++) {
     const inputValue = parseInt(input.value) || 0;
     input.value = inputValue + 1;
   });
+
 }
 
 for (let i = 0; i < decrementButton.length; i++) {
@@ -66,7 +109,6 @@ function myFunction() {
   console.log(output)
 }
 
-
 //PAGE SWIPER
 var slide = 0;
 function swipePage(increment) {
@@ -88,42 +130,6 @@ function onlyOne(checkbox) {
   });
 }
 
-//LX ADDER
-document.querySelectorAll('.update').forEach(button => {
-  button.addEventListener('click', function(event) {
-    // Get the button that was clicked
-    let buttonClicked = event.target;
-    // Get the group ID from the button
-    let groupId = buttonClicked.dataset.group;
-    // Find the input with matching ID
-    let input = document.getElementById(groupId);
-    // Append the button's title to the input value with a slash
-    if (input.value) {
-      input.value += ` / ${buttonClicked.title}`;
-    } else {
-      input.value = buttonClicked.title; // No slash for the first value
-    }
-  });
-});
-
-//LX REMOVER
-document.querySelectorAll('.remove').forEach(button => {
-  button.addEventListener('click', function(event) {
-    // Get the button that was clicked
-    let buttonClicked = event.target;
-    // Get the group ID from the button
-    let groupId = buttonClicked.dataset.group;
-    // Find the input with matching ID
-    let input = document.getElementById(groupId);
-    // Split the input value into an array of strings
-    let inputValues = input.value.split(' / ');
-    // Remove the last element of the array
-    inputValues.pop();
-    // Join the array back into a string
-    input.value = inputValues.join(' / ');
-  });
-});
-
 //FORM CRUD
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyrnSy8T4z5g1M99gHYRTkfo3P9cg_8gvy23i5B7zJoXfUALuyis74UvGATnkDLeRxCsg/exec'
   const form = document.forms['submit-to-google-sheet']
@@ -134,4 +140,3 @@ document.querySelectorAll('.remove').forEach(button => {
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
   })
-
