@@ -71,8 +71,8 @@
         <input class="fuel-counter" type="text" value="0"/>
         <div class="row-wrapper">
         <button class="fuel-button" type="Button" value="1">+1</button>
+        <button class="fuel-button" type="Button" value="3">+3</button>
         <button class="fuel-button" type="Button" value="5">+5</button>
-        <button class="fuel-button" type="Button" value="10">+10</button>
         <button class="fuel-button" type="Button" value="Undo">Undo</button>
         </div>
       </div>
@@ -122,15 +122,19 @@
       <input class="fuel-counter" type="text" value="0"/>
         <div class="row-wrapper">
          <button class="fuel-button" type="Button" value="1">+1</button>
+         <button class="fuel-button" type="Button" value="3">+3</button>
          <button class="fuel-button" type="Button" value="5">+5</button>
-         <button class="fuel-button" type="Button" value="10">+10</button>
          <button class="fuel-button" type="Button" value="Undo">Undo</button>
        </div>
       </div>
 
       <div class="row-wrapper">
         <button class="selector accuracy" type="Button" onclick="swipePage(1)">Accuracy</button>
-        </div>    
+        </div>
+
+      <div class="row-wrapper">
+        <button class="selector " type="Button">Broken</button>
+        </div>
 
       <div class="container2">
         <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
@@ -154,31 +158,30 @@
   
     <!-- ENDGAME -->
     <div id="Endgame" style="display: none;">
+
       <h1>Endgame</h1>
+
       <br>
-      <h3>Final Status</h3>
-      <table class="container2">
-        <tr>
-          <td>Parked</td>
-          <td><input name="Parked" id ="parked" type="checkbox" class="checkboxes" onclick="onlyOne(this)"></td>
-        </tr>
-        <td>Shallow</td>
-        <td><input name="Shallow" id="shallow" type="checkbox" class="checkboxes" onclick="onlyOne(this)"></td>
-        </tr>
-        <td>Deep</td>
-        <td><input name="Deep" id="deep" type="checkbox" class="checkboxes" onclick="onlyOne(this)"></td>
-        </tr>
-        <td>Failed Climb</td>
-        <td><input name="Failed" id="failed" type="checkbox" class="checkboxes" onclick="onlyOne(this)"></td>
-      </table>
-      <h3>Comments</h3>
-      <div class="container2">
-        <textarea name="Comments" id="comments" rows="4" cols="50"></textarea>
+
+      <div class="row-wrapper">
+          <button  class="selector climb" type="Button">Final Climb Status</button>
       </div>
+      
+      <div class="row-wrapper">
+          <button  class="selector" type="Button">Defence?</button>
+      </div>
+
+      <h3>Comments</h3>
+
+      <div class="container2">
+        <textarea name="Comments" id="comments" rows="4" cols="60"></textarea>
+      </div>
+
       <div class="container2">
         <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
         <button class="updater" onclick="swipePage(1)" type="Button">Next</button>
       </div>
+
     </div>
 
     <!-- DATA -->
@@ -189,8 +192,8 @@
         <button type="submit" onclick="myFunction();swipePage(1)">Submit</button>
       </div>
       <p id="output"></p>
-      <div class="container2">
-        <button class="updater" onclick="swipePage(-1)" type="Button">Prev</button>
+       <div class="container2">
+        <button class="updater" type="Button"onclick="swipePage(-1)" style="width: 75vw;">Prev</button>
       </div>
            
     </div>
@@ -200,6 +203,7 @@
   </div>
 
   <script src="script.js"></script>
+
   </form>
   
 </body>
