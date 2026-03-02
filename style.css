@@ -85,13 +85,20 @@ button[type="button"] {
 }
 
 button[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
   background-color: #ffffff;
+  color: #000000;
   text-align: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   width: 80vw;
   height: 50vh;
   padding: 15px 32px;
   font-size: 7.5vh;
+  border-radius: 8px;
+  border: none;
 }
 
 input[type='checkbox'] {
