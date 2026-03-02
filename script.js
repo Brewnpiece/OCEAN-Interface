@@ -2,6 +2,7 @@
 
 //ROBOT SIDE COLOR CHANGE
 const robotSide = document.getElementById('robot-side');
+
 robotSide.addEventListener("change", () => {
 
   if (robotSide.value.includes('Red')) {
@@ -14,6 +15,7 @@ robotSide.addEventListener("change", () => {
 
 //TOGGLE BUTTONS
 const toggleState = document.querySelectorAll('.toggle');
+
 toggleState.forEach(e => {e.addEventListener("click", () => {
 
   e.value = (e.value =="0") ? "1" : "0";
@@ -51,52 +53,17 @@ fuelElements.forEach(e => {
   });
 });
 
-//ACCURACY/CLIMB BUTTONS FIX FIX
-const AccuracyElements = document.querySelectorAll('.four');
-const ClimbElements = document.querySelectorAll('.two');
+//BUTTON PARENT TEXT CHANGER
+var currentButton = ""
 
-AccuracyElements.forEach(e => {
-  e.addEventListener("click", () => {
-    let NewAccuracyValue = e.innerHTML
-    const parent = e.closest('.accuracy-four')
-    const display = document.querySelector('.accuracy');
-    display.innerHTML = NewAccuracyValue;
-  });
-});
+function buttonClick(outerButton) {
+ currentButton = outerButton;
+};
 
-ClimbElements.forEach(e => {
-  e.addEventListener("click", () => {
-    let NewClimbValue = e.innerHTML
-    const parent = e.closest('.climb-two')
-    const display = document.querySelector('.climb');
-    display.innerHTML = NewClimbValue;
-  });
-});
-
-//SUBMIT FUNCTION
-function myFunction() {
-  // Get all input elements with the class 'counter-display'
-  const inputs = document.querySelectorAll('input');
-  const scouterName = document.getElementById('scouter-name').value;
-  const robotSide = document.querySelector('#robot-side').value;
-  const comments = document.getElementById('comments').value;
-  const teamNumber = document.getElementById('team-number').value;
-  const checkbox = document.getElementById('leave');
-  const parked = document.getElementById('parked');
-  const stage = document.getElementById('shallow');
-  const none = document.getElementById('deep');
-  const matchNumber = document.getElementById('match-number').value;
-  let output = 'The values are: ';
-  output += `${scouterName}~${matchNumber}~${robotSide}~${teamNumber}~${checkbox.checked}~${parked.checked}~${stage.checked}~${none.checked}~`;
-  
-  inputs.forEach(input => {
-    output += `${input.value}~`;
-  });
-  output += `${comments}`;
-
-  document.getElementById('output').innerHTML = output;
-  console.log(output)
-}
+function setParent(innerButton) {
+  currentButton.innerHTML = innerButton.innerHTML;
+  currentButton.style.backgroundColor = "#C38C26", currentButton.style.borderColor = "#C38C26";
+};
 
 //PAGE SWIPER
 var slide = 0;
@@ -111,21 +78,64 @@ function swipePage(increment) {
   }
 }
 
-//CHECKBOXES
-function onlyOne(checkbox) {
-  var checkboxes = Array.from(document.getElementsByClassName('checkboxes'));
-  checkboxes.forEach((item) => {
-    if (item !== checkbox) item.checked = false;
-  });
-}
-
 //FORM CRUD
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyrnSy8T4z5g1M99gHYRTkfo3P9cg_8gvy23i5B7zJoXfUALuyis74UvGATnkDLeRxCsg/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwbeHxnCOE3frSO-4MMuzQMoaJa4oeDLAPbOLrVTBNzv9EQskVME0xOjzenBeDtxuxB/exec'
   const form = document.forms['submit-to-google-sheet']
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  swipePage(1); 
+
+  const icon = document.getElementById('status-icon');
+  const text = document.getElementById('status-text');
+  const exitPage = document.getElementById('DataSent');
+  const data = new FormData(form);
+
+document.querySelectorAll('button[data-name]').forEach(btn => {
+  let val;
+
+  if (btn.classList.contains('toggle')) {
+    val = btn.value; 
+  } 
+
+  else {
+    const defaults = ["Accuracy", "Climb", "Broken", "Final Climb Status", "Defence?"];
+    val = defaults.includes(btn.innerText) ? "" : btn.innerText;
+  }
+
+  data.append(btn.getAttribute('data-name'), val);
+  
+});
+
+
+fetch(scriptURL, { method: 'POST', body: data })
+  .then(() => {
+    icon.className = "success-icon"; 
+    text.innerText = "Data Sent!";
+    document.getElementById('DataSent').className = "Bubbles"; 
+    setTimeout(() => location.reload(), 6000);
   })
+  .catch(err => {
+    icon.className = "error-icon";
+    text.innerText = "Upload Failed";
+    document.getElementById('retry-btn').style.display = "block";
+    console.error(err);
+  });
+});
+
+function resetAfterError() {
+  const slides = document.getElementById('pages').children;
+  
+  slide = slides.length - 2; 
+
+  document.getElementById('DataSent').style.display = 'none';
+  slides[slide].style.display = 'block';
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = false;
+  
+  const icon = document.getElementById('status-icon');
+  icon.className = "loading-circle";
+  document.getElementById('status-text').innerText = "Sending Data...";
+  document.getElementById('retry-btn').style.display = "none";
+};

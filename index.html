@@ -13,7 +13,8 @@
   
   <!-- FORM -->
   <form name="submit-to-google-sheet">
-
+    
+  <!-- PAGES -->
   <div id="pages">
 
     <!-- ID PAGE -->
@@ -68,7 +69,7 @@
 
       <h3>Auton Fuel</h3>
       <div class="fuel-split" id="Fuel_Auton">
-        <input class="fuel-counter" type="text" value="0"/>
+        <input name="Auton-Fuel" class="fuel-counter" type="text" value="0"/>
         <div class="row-wrapper">
         <button class="fuel-button" type="Button" value="1">+1</button>
         <button class="fuel-button" type="Button" value="3">+3</button>
@@ -78,16 +79,16 @@
       </div>
 
       <div class="row-wrapper">
-        <button class="selector toggle" type="button" value="0">Human</button>
-        <button class="selector toggle" type="Button" value="0">Center</button >
+        <button data-name="Auton-Human" class="selector toggle" type="button" value="0">Human</button>
+        <button data-name="Auton-Center" class="selector toggle" type="Button" value="0">Center</button >
       </div>
       
       <div class="row-wrapper">
-        <button class="selector accuracy" type="Button" onclick="swipePage(1)">Accuracy</button>
+        <button data-name="Auton-Accuracy" class="selector accuracy" type="Button" onclick="swipePage(1); buttonClick(this)">Accuracy</button>
         </div>
     
       <div class="row-wrapper">
-          <button  class="selector climb" type="Button" onclick="swipePage(2)">Climb</button>
+          <button data-name="Auton-Climb" class="selector climb" type="Button" onclick="swipePage(2); buttonClick(this)">Climb</button>
       </div>
 
       <div class="container2">
@@ -98,16 +99,17 @@
 
     <!-- ACCURACY AUTON -->
     <div class="accuracy-four" style="display: none;">
-      <button type="button" class="four" onclick="swipePage(-1)">100-90%</button>
-      <button type="button" class="four" onclick="swipePage(-1)">89%-70%</button>
-      <button type="button" class="four" onclick="swipePage(-1)">70%-49%</button>
-      <button type="button" class="four" onclick="swipePage(-1)">< 50%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">100-90%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">89%-70%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">70%-49%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">< 50%</button>
     </div>
 
     <!-- CLIMB AUTON -->
     <div class="climb-two" style="display: none;">
-       <button class="two" type="button" onclick="swipePage(-2)">L2</button>
-      <button class="two" type="button" onclick="swipePage(-2)">L1</button>
+      <button class="three" type="button" onclick="swipePage(-2); setParent(this)">L2</button>
+      <button class="three" type="button" onclick="swipePage(-2); setParent(this)">L1</button>
+      <button class="three" type="button" onclick="swipePage(-2); setParent(this)">No Climb</button>
     </div>
 
     <!-- TELEOP -->
@@ -119,7 +121,7 @@
       
     <h3>Teleop Fuel</h3>
      <div class="fuel-split" id="Fuel_Teleop">
-      <input class="fuel-counter" type="text" value="0"/>
+      <input name="Teleop-Fuel" class="fuel-counter" type="text" value="0"/>
         <div class="row-wrapper">
          <button class="fuel-button" type="Button" value="1">+1</button>
          <button class="fuel-button" type="Button" value="3">+3</button>
@@ -129,11 +131,11 @@
       </div>
 
       <div class="row-wrapper">
-        <button class="selector accuracy" type="Button" onclick="swipePage(1)">Accuracy</button>
+        <button data-name="Teleop-Accuracy" class="selector accuracy" type="Button" onclick="swipePage(1); buttonClick(this)">Accuracy</button>
         </div>
 
       <div class="row-wrapper">
-        <button class="selector " type="Button">Broken</button>
+        <button data-name="Teleop-Broken" class="selector broken" type="Button" onclick="swipePage(2); buttonClick(this)">Broken</button>
         </div>
 
       <div class="container2">
@@ -144,16 +146,18 @@
 
     <!-- ACCURACY TELEOP -->
     <div class="accuracy-four" style="display: none;">
-      <button type="button" class="four" onclick="swipePage(-1)">100-90%</button>
-      <button type="button" class="four" onclick="swipePage(-1)">89%-70%</button>
-      <button type="button" class="four" onclick="swipePage(-1)">70%-49%</button>
-      <button type="button" class="four" onclick="swipePage(-1)">< 50%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">100-90%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">89%-70%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">70%-49%</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">< 50%</button>
     </div>
   
-    <!-- ALGAE PAGE TELEOP (OLD) -->
-    <div id="Algea Split_T" style="display: none;">
-      <button id="two" data-group="DeAlgae_T" type="button" class="update" title="L3" onclick="swipePage(-2)">L3</button>
-      <button id="two" data-group="DeAlgae_T" type="button" class="update" title="L2" onclick="swipePage(-2)">L2</button>
+    <!-- BROKEN TELEOP -->
+    <div class="accuracy-four" style="display: none;">
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">Did Not Work</button>
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">Mostly Broken/Stuck</button>
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">Somewhat Broken/Stuck</button>
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">Not Broken/Stuck</button>
     </div>
   
     <!-- ENDGAME -->
@@ -164,11 +168,11 @@
       <br>
 
       <div class="row-wrapper">
-          <button  class="selector climb" type="Button">Final Climb Status</button>
+          <button data-name="Final-Climb" class="selector climb" type="Button" onclick="swipePage(1); buttonClick(this)">Final Climb Status</button>
       </div>
       
       <div class="row-wrapper">
-          <button  class="selector" type="Button">Defence?</button>
+          <button data-name="Defence" class="selector" type="Button" onclick="swipePage(2); buttonClick(this)">Defence?</button>
       </div>
 
       <h3>Comments</h3>
@@ -179,9 +183,25 @@
 
       <div class="container2">
         <button class="updater" onclick="swipePage(-3)" type="Button">Prev</button>
-        <button class="updater" onclick="swipePage(1)" type="Button">Next</button>
+        <button class="updater" onclick="swipePage(3)" type="Button">Next</button>
       </div>
 
+    </div>
+
+    <!-- CLIMB ENDGAME -->
+    <div class="accuracy-four" style="display: none;">
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">L3</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">L2</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">L1</button>
+      <button type="button" class="four" onclick="swipePage(-1); setParent(this)">No Climb</button>
+    </div>
+
+    <!-- DEFENCE ENDGAME -->
+    <div class="accuracy-four" style="display: none;">
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)" >Defence Bot</button>
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">More Defence</button>
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">Some Defence</button>
+      <button type="button" class="four" onclick="swipePage(-2); setParent(this)">No Defence</button>
     </div>
 
     <!-- DATA -->
@@ -189,17 +209,21 @@
       <h1>Data</h1>
 
       <div class="container2">
-        <button type="submit" onclick="myFunction();swipePage(1)">Submit</button>
+        <button type="submit" onclick="swipePage(1)">Submit</button>
       </div>
       <p id="output"></p>
        <div class="container2">
-        <button class="updater" type="Button"onclick="swipePage(-1)" style="width: 75vw;">Prev</button>
+        <button class="updater" type="Button"onclick="swipePage(-3)" style="width: 75vw;">Prev</button>
       </div>
            
     </div>
 
    <!-- EXIT -->
-    <div id="DataSent" class="imageContainer" style="text-align: center; vertical-align: middle; line-height: 600px; display: none;">Data Sent!</div>
+    <div id="DataSent" style="display: none;">
+      <div id="status-icon" class="loading-circle"></div>
+      <h1 id="status-text" style="margin-top: 20px;">Sending Data...</h1>
+      <button id="retry-btn" class="row-wrapper" type="button" style="display:none" onclick="resetAfterError()">Try Again</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
