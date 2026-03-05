@@ -1,4 +1,4 @@
-body {
+html, body {
   background: transparent;
   /* Make it white if you need */
   color: #ffffff;
@@ -6,14 +6,14 @@ body {
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+  touch-action: manipulation;
 }
 
 h1 {
-  margin: 15px;
   text-align: center;
   padding: px;
   font-size: 40px;
-  font-weight: bold;
 }
 
 h3 {
@@ -23,42 +23,52 @@ h3 {
   font-size: 25px;
 }
 
-.container1 {
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-}
-
 .container2 {
-
   display: flex;
+  flex-direction: row; 
   padding-bottom: 50px;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
+.fuel-split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  padding-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.selector {
+  flex: 1;
+  margin: 0;
+  height: 7.5vh;
+  box-sizing: border-box;
+}
+
+.fuel-counter {
+  width: 90vw;
+  box-sizing: border-box;
+}
+.fuel-button {
+  flex: 1;
+  box-sizing: border-box;
+  margin: 0;
+  height: 7.5vh;
+  min-width: 0;
+}
+
 .counter-display {
-  width: 110px;
-  height: 50px;
   border: 1px solid white;
   text-align: center;
   vertical-align: middle;
-  line-height: 50px;
-}
-
-.button {
-  background-color: #ffffff0%, 0%);
-  /* Green */
-  border: 1pxblack;
-  color: #000000;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
 
 button[type="button"] {
@@ -68,23 +78,27 @@ button[type="button"] {
   color: #000000;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 
 button[type="submit"] {
-  border: 1pxblack;
-  border-color: #ffffff;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: #ffffff;
   color: #000000;
-  width: 110px;
-  height: 50px;
-  padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 50vh;
+  padding: 15px 32px;
+  font-size: 7.5vh;
+  border-radius: 8px;
+  border: none;
 }
 
 input[type='checkbox'] {
@@ -95,85 +109,125 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked {
   background-color: rgb(0, 63, 105);
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 input[type='text'] {
-  background: #fafafa;
   font-size: 22px;
+  border: 1px solid white;
+  line-height: 50px;
+  text-align: center;
 }
 
 .updater {
-  border: 1pxblack;
   color: #000000;
-  padding: 15px 32px;
+  height: 7.5vh;
+  width: 40vw;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 16px
 }
 
-#output {
+.ID {
+  width: 30vw;
+  height: 6.5vh;
+  font-size: 20px;
   text-align: center;
-  font-weight: bolder;
-  font-size: 1.17em;
+  text-transform: uppercase;
 }
 
-input[type='select'] {
-  width: 100px;
-}
-
-input[type='text'] {
-  width: 110px;
-  height: 49px;
-  border: 1px solid white;
-  vertical-align: middle;
-  line-height: 50px;
-}
-
-
-#four {
+/* four-button layout used on several accuracy pages */
+button.four {
   width: 100%;
-  height: 20vh;
-  margin-bottom: 10px;
-  font-size: 300%;
+  height: 23.75vh;
+  margin-bottom: 1vh;
+  font-size: 50px;
   font-weight: bold;
   border-color: black;
 }
 
-#two {
-  width: 100%;
-  height: 400px;
-  margin-bottom: 10px;
-  font-display: ;
+/* three-button layout used for climb options */
+button.three {
+  display: flex;
+  width: 94vw;
+  height: 32.3vh;
+  margin-bottom: 1vh;
+  font-size: 500%;
+  font-weight: bold;
+  border-color: black;
 }
 
-.form {
-  font-size: 20px;
-  text-align: center;
-  font-style: italic;
+.Bubbles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("Bubbles.gif");
+  background-size: cover;
+  background-position: center bottom;
+  margin: 0;
+  z-index: 1000;
+}
+
+.Red {
+  background-color: rgb(235, 109, 109);
+}
+
+.Blue {
+  background-color: rgb(109, 149, 235);
 }
 
 #DataSent {
   font-size: 50px;
   text-align: center;
+  padding-top: 35vh;
 }
 
- .imageContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-       background-image: url("ZdPK.gif");
-         background-position: 50%;
-         background-repeat: no-repeat;
-       height: 600px;
-   font-weight: bold;
-
- }
-
  #comments {
-  height: 100px;
-  width: 300px;
+  height: 20vh;
+  width: 80vw;
   font-size: large;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th, td {
+    padding: 2vh;
+}
+
+.loading-circle {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #C38C26;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.success-icon::before {
+  content: '✓';
+  font-size: 60px;
+  color: #4CAF50;
+  display: block;
+}
+
+.error-icon::before {
+  content: '✕';
+  font-size: 60px;
+  color: #f44336;
+  display: block;
+}
+
+.success-icon, .error-icon {
+  animation: none;
+  border: 8px solid currentColor;
 }
